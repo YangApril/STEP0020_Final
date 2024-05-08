@@ -1,0 +1,305 @@
+---
+title: "AMP"
+output: html_document
+date: "2024-04-29"
+---
+
+# Figure 1: Correlation between air pollutants and the incidence of lung cancer and breast cancer in the United Kingdom
+
+```{r Figure_1, show_col_types = FALSE, echo=TRUE}
+
+library(openair)
+library(tidyverse)
+
+uk_pollutants_all <- importAURN(site = "all", year = 2009:2019, data_type = "annual")
+
+uk_pollutants_all <- uk_pollutants_all %>%
+  mutate(year = lubridate::year(date))
+
+uk_annual_average <- uk_pollutants_all %>%
+  group_by(year) %>%
+  summarise(
+    avg_pm10 = mean(pm10, na.rm = TRUE),
+    avg_pm25 = mean(pm2.5, na.rm = TRUE),
+    avg_no = mean(no, na.rm = TRUE),
+    avg_no2 = mean(no2, na.rm = TRUE),
+    avg_nox = mean(nox, na.rm = TRUE),
+    avg_o3 = mean(o3, na.rm = TRUE),
+    avg_so2 = mean(so2, na.rm = TRUE)
+  )
+
+library(readr)
+
+cancer_data <- read_csv("data/cancer_UK.csv")
+cancer_data$Year <- as.integer(cancer_data$Year)
+combined_data <- left_join(uk_annual_average, cancer_data, by = c("year" = "Year"))
+
+library(dplyr)
+library(ggplot2)
+library(corrplot)  
+
+cancer_pollutant_data <- combined_data %>%
+  select(avg_pm10, avg_pm25, avg_no, avg_no2, avg_nox, avg_o3, avg_so2, lung_cancer, breast_cancer) 
+
+cor_matrix <- cor(cancer_pollutant_data, use = "complete.obs") 
+
+colors <- c(colorRampPalette(c("orange", "white"))(100), colorRampPalette(c("white", "red"))(100))
+
+col_index <- function(cor_value) {
+  round((cor_value + 1) * 99.5) + 1
+}
+
+png("correlation_matrix.png", width = 800, height = 600)
+
+corrplot(cor_matrix, method = "circle",
+         col = colors, 
+         colorRampPalette = colors,  
+         tl.col = "black",   
+         tl.srt = 45,          
+         tl.cex = 1.5,        
+         cl.cex = 1,        
+         addCoef.col = "white",  
+         number.cex = 1.5)    
+
+dev.off()
+
+```
+
+# Figure 2: Positive Correlation between 03 Levels and Breast Cancer Incidence
+
+```{r Figure_2, show_col_types = FALSE, echo=TRUE}
+
+ggplot(cancer_pollutant_data, aes(x = avg_o3, y = breast_cancer)) +
+  geom_smooth(method = "lm", se = TRUE, color = "red", size = 1) +
+  labs(title = "Positive Correlation between O3 Levels and Breast Cancer Incidence",
+       x = "Average O3 Levels", y = "Breast Cancer Incidence") +
+  theme_minimal() + 
+  theme(
+    plot.title = element_text(size = 20, face = "bold"),  
+    axis.title = element_text(size = 16),  
+    axis.text = element_text(size = 14) 
+  ) +
+  geom_path(aes(x = 42, y = 14000), arrow = arrow(length = unit(0.5, "cm")), color = "black") +
+  geom_path(aes(x = 50, y = 14000), arrow = arrow(length = unit(0.5, "cm")), color = "black")
+
+ggsave("breast_cancer_o3_relationship.png", 
+       plot = ggplot(cancer_pollutant_data, aes(x = avg_o3, y = breast_cancer)) +
+              geom_smooth(method = "lm", se = TRUE, color = "red", size = 1) + 
+              labs(title = "Positive Correlation between O3 Levels and Breast Cancer Incidence",
+                   x = "Average O3 Levels", y = "Breast Cancer Incidence") +
+              theme_minimal() +
+         theme(
+    plot.title = element_text(size = 20, face = "bold"),
+    axis.title = element_text(size = 16), 
+    axis.text = element_text(size = 14) 
+  ),  
+       width = 10, height = 8, dpi = 300)
+
+```
+
+# Figure 3: Positive Correlation between 03 Levels and Lung Cancer Incidence
+
+```{r Figure_3, show_col_types = FALSE, echo=TRUE}
+ggplot(cancer_pollutant_data, aes(x = avg_o3, y = lung_cancer)) +
+  geom_smooth(method = "lm", se = TRUE, color = "red", size = 1) + 
+  labs(title = "Positive Correlation between O3 Levels and Lung Cancer Incidence",
+       x = "Average O3 Levels", y = "Lung Cancer Incidence") +
+  theme_minimal()  
+
+ggsave("lung_cancer_o3_relationship.png", 
+       plot = ggplot(cancer_pollutant_data, aes(x = avg_o3, y = lung_cancer)) +
+              geom_smooth(method = "lm", se = TRUE, color = "red", size = 1) + 
+              labs(title = "Positive Correlation between O3 Levels and Lung Cancer Incidence",
+                   x = "Average O3 Levels", y = "Lung Cancer Incidence") +
+              theme_minimal() + 
+         theme(
+    plot.title = element_text(size = 20, face = "bold"),  
+    axis.title = element_text(size = 18), 
+    axis.text = element_text(size = 18) 
+  ),  
+       width = 10, height = 8, dpi = 300)
+
+```
+
+# Figure 4: Results of regression analyses of air pollutants and lung, breast cancer incidence rates
+
+```{r Figure_4, show_col_types = FALSE, echo=TRUE}
+
+lung_o3_model <- lm(lung_cancer ~ avg_o3, data = cancer_pollutant_data)
+summary(lung_o3_model)
+confint(lung_o3_model)
+
+breast_o3_model <- lm(breast_cancer ~ avg_o3, data = cancer_pollutant_data)
+summary(breast_o3_model)
+confint(breast_o3_model)
+
+```
+
+# Figure 5: Scatter chart of PM2.5 concentration and population Density in 2019 (by city)
+
+```{r Figure_5, show_col_types = FALSE, echo=TRUE}
+
+library(ggplot2)
+library(dplyr)
+
+
+PM2_5_Population_data <- read_csv("data/PM2.5_map_data.csv")  
+
+PM2_5_Population_data$FactValueNumeric <- as.numeric(PM2_5_Population_data $FactValueNumeric)
+PM2_5_Population_data$Population_density <- as.numeric(PM2_5_Population_data $Population_density)
+
+ggplot(PM2_5_Population_data, aes(x=Population_density, y=FactValueNumeric, label=Location, color=ParentLocationCode)) +
+  geom_point() + 
+  geom_text(aes(label=Location), vjust=-1, hjust=0.5) + 
+  labs(title="PM2.5 vs. Population Density by Region (2019)",
+       x="Population Density (per sq km)", 
+       y="Annual average pm2.5 emissions (µg/m3)") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 20, face = "bold"), 
+    axis.title = element_text(size = 14), 
+    axis.line = element_line(color = "black", size = 0.5) 
+  ) +
+  scale_color_manual(values=c("Asia"="blue", "Africa"="red", "Australia"="green", "Europe"="purple", "North America"="orange", "South America"="yellow"),
+                     labels=c("Asia", "Africa", "Australia", "Europe", "North America", "South America")) 
+
+ggsave("PM25_vs_PopDensity.png", width = 10, height = 8, dpi = 300)
+
+```
+
+# Figure 6: Positive Correlation between population density and PM2.5 concentration in 2019
+
+```{r Figure_6, show_col_types = FALSE, echo=TRUE}
+
+ggplot(PM2_5_Population_data, aes(x = Population_density, y = FactValueNumeric)) +
+  geom_smooth(method = "lm", se = TRUE, color = "red", size = 1) + 
+  labs(title = "Positive Correlation between population density and average annual PM2.5 concentration",
+       x = "Population Density (per sq km)", y = "Average Annual PM2.5 Concentration (µg/m3)") +
+  theme_minimal() 
+
+ggsave("regression_plot.png", 
+       ggplot(PM2_5_Population_data, aes(x = Population_density, y = FactValueNumeric)) +
+  geom_smooth(method = "lm", se = TRUE, color = "red", size = 1) + 
+  labs(title = "Positive Correlation between population density and PM2.5 concentration",
+       x = "Population Density (per sq km)", y = "Average Annual PM2.5 Concentration (µg/m3)") +
+  theme_minimal() + 
+         theme(
+    plot.title = element_text(size = 17, face = "bold"), 
+    axis.title = element_text(size = 18),
+    axis.text = element_text(size = 18) 
+  ), 
+       width = 10, height = 8, dpi = 300)
+
+```
+
+# Figure 7: Results of regression analyse of population density and PM2.5 concentration in 2019
+
+```{r Figure_7, show_col_types = FALSE, echo=TRUE}
+
+Population_model <- lm(Population_density ~ FactValueNumeric, data = PM2_5_Population_data)
+summary(Population_model)
+
+```
+
+# Figure 8.1: PM2.5 Concentration Map of London (2019)
+
+```{r Figure_8.1, show_col_types = FALSE, echo=TRUE}
+library(ggplot2)
+library(sf)
+library(readr)
+
+london_shapefile <- st_read("/Users/yangyuehan/Downloads/London-wards-2018/London-wards-2018_ESRI")
+
+london_population <- read_csv("data/london_population.csv")
+london_population_sf <- st_as_sf(london_population, coords = c("Longitude", "Latitude"), crs = 4326)
+london_population_sf <- st_transform(london_population_sf, crs = st_crs(london_shapefile))
+london_population_sf$PM2.5 <- as.numeric(london_population_sf$PM2.5)
+london_map <- st_join(london_shapefile, london_population_sf, join = st_nearest_feature)
+
+
+ggplot(london_map) +
+  geom_sf(aes(fill = PM2.5)) +
+  scale_fill_gradient(low = "lightblue", high = "darkblue", name = "PM2.5 Concentration") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 20, face = "bold")) + 
+  labs(title = "PM2.5 Concentration Map of London")
+
+
+ggsave("london_PM2.5_map.png", width = 10, height = 8, dpi = 300)
+
+
+```
+
+# Figure 8.2: Population Density Map of London (2019)
+
+```{r Figure_8.2, show_col_types = FALSE, echo=TRUE}
+
+ggplot(london_map) +
+  geom_sf(aes(fill = Population_per_square_kilometre)) +
+  scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Population Density") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 20, face = "bold")) +
+  labs(title = "Population Density Map of London")
+
+ggsave("london_population_map.png", width = 10, height = 8, dpi = 300)
+
+```
+
+# Figure 9: PM2.5 exposure in London versus other cities (2000-2019)
+
+```{r Figure_9, show_col_types = FALSE, echo=TRUE}
+
+library(readr)
+London_comparision <- read_csv("data/London_comparision.csv")
+ggplot(London_comparision, aes(x=City, y=Exposure_Mean, fill=City)) +
+  geom_violin(trim=FALSE) + 
+  geom_boxplot(width=0.1, fill="white") + 
+  labs(title="PM2.5 exposure in London versus other cities (2000-2019)", x="City", y=" PM2.5 (µg/m3)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(plot.title = element_text(size = 20, face = "bold"))
+ggsave("London_comparision.png", width = 10, height = 8, dpi = 300)
+
+stats <- London_comparision %>%
+  group_by(City) %>%
+  summarise(
+    Min = min(Exposure_Mean, na.rm = TRUE),
+    Q1 = quantile(Exposure_Mean, 0.25, na.rm = TRUE),
+    Median = median(Exposure_Mean, na.rm = TRUE),
+    Q3 = quantile(Exposure_Mean, 0.75, na.rm = TRUE),
+    Max = max(Exposure_Mean, na.rm = TRUE)
+  )
+
+print(stats)
+
+```
+
+# Figure 10: Box plot results
+
+```{r Figure_10, show_col_types = FALSE, echo=TRUE}
+
+library(readr)
+London_global_comparision <- read_csv("data/London_global_comparision.csv")
+London_global_comparision$Year <- as.Date(as.character(London_global_comparision$Year), format="%Y")
+
+ggplot(London_global_comparision, aes(x=Year)) +
+  geom_line(aes(y=`London, United Kingdom`, colour="London, United Kingdom"), size=1) +
+  geom_line(aes(y=Global, colour="Global"), size=1) +
+  geom_line(aes(y=`United Kingdom`, colour="United Kingdom"), size=1) +
+  geom_hline(aes(yintercept=AQG, linetype="AQG"), size=1, colour="green") +
+  scale_color_manual(values=c("London, United Kingdom"="green", "Global"="yellow", "United Kingdom"="red", "AQG"="blue")) +
+  labs(title="Average Annual Population-Weighted PM2.5",
+       x="Year", y="Annual population Weighted PM2.5 (µg/m3)") +
+  theme_minimal() +
+  theme(legend.title=element_blank())
+
+
+```
+
+
+
+
+
+
+
+

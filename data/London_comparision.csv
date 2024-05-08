@@ -1,0 +1,121 @@
+Exposure Id,City_id,Type,City,Country,ISO3,Region,Name,Exposure Lower,Exposure_Mean,Exposure Upper,Year,Pollutant,Pollutant Name,Region Name,Units
+132401,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,21.4,,2000,pm25,PM25,City,µg/m3
+132402,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,16.7,,2001,pm25,PM25,City,µg/m3
+132403,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,18,,2002,pm25,PM25,City,µg/m3
+132404,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,22.7,,2003,pm25,PM25,City,µg/m3
+132405,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,17.2,,2004,pm25,PM25,City,µg/m3
+132406,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,16.6,,2005,pm25,PM25,City,µg/m3
+132407,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,16.7,,2006,pm25,PM25,City,µg/m3
+132408,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,15.6,,2007,pm25,PM25,City,µg/m3
+132409,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,19.4,,2008,pm25,PM25,City,µg/m3
+132410,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,16.7,,2009,pm25,PM25,City,µg/m3
+132411,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,15,,2010,pm25,PM25,City,µg/m3
+132412,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,17.9,,2011,pm25,PM25,City,µg/m3
+132413,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,14.3,,2012,pm25,PM25,City,µg/m3
+132414,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,16.8,,2013,pm25,PM25,City,µg/m3
+132415,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,14.9,,2014,pm25,PM25,City,µg/m3
+132416,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,13.1,,2015,pm25,PM25,City,µg/m3
+132417,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,14.7,,2016,pm25,PM25,City,µg/m3
+132418,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,14.9,,2017,pm25,PM25,City,µg/m3
+132419,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,14.2,,2018,pm25,PM25,City,µg/m3
+132420,1919,city,London,United Kingdom,GBR,city,"London, United Kingdom",,15.3,,2019,pm25,PM25,City,µg/m3
+19261,10745,city,Beijing,China,CHN,city,"Beijing, China",,50.7,,2000,pm25,PM25,City,µg/m3
+19262,10745,city,Beijing,China,CHN,city,"Beijing, China",,61.3,,2001,pm25,PM25,City,µg/m3
+19263,10745,city,Beijing,China,CHN,city,"Beijing, China",,60.8,,2002,pm25,PM25,City,µg/m3
+19264,10745,city,Beijing,China,CHN,city,"Beijing, China",,66.9,,2003,pm25,PM25,City,µg/m3
+19265,10745,city,Beijing,China,CHN,city,"Beijing, China",,58.7,,2004,pm25,PM25,City,µg/m3
+19266,10745,city,Beijing,China,CHN,city,"Beijing, China",,61,,2005,pm25,PM25,City,µg/m3
+19267,10745,city,Beijing,China,CHN,city,"Beijing, China",,75.1,,2006,pm25,PM25,City,µg/m3
+19268,10745,city,Beijing,China,CHN,city,"Beijing, China",,68.3,,2007,pm25,PM25,City,µg/m3
+19269,10745,city,Beijing,China,CHN,city,"Beijing, China",,67.4,,2008,pm25,PM25,City,µg/m3
+19270,10745,city,Beijing,China,CHN,city,"Beijing, China",,70.2,,2009,pm25,PM25,City,µg/m3
+19271,10745,city,Beijing,China,CHN,city,"Beijing, China",,64.1,,2010,pm25,PM25,City,µg/m3
+19272,10745,city,Beijing,China,CHN,city,"Beijing, China",,72.2,,2011,pm25,PM25,City,µg/m3
+19273,10745,city,Beijing,China,CHN,city,"Beijing, China",,62,,2012,pm25,PM25,City,µg/m3
+19274,10745,city,Beijing,China,CHN,city,"Beijing, China",,83.5,,2013,pm25,PM25,City,µg/m3
+19275,10745,city,Beijing,China,CHN,city,"Beijing, China",,67.2,,2014,pm25,PM25,City,µg/m3
+19276,10745,city,Beijing,China,CHN,city,"Beijing, China",,67,,2015,pm25,PM25,City,µg/m3
+19277,10745,city,Beijing,China,CHN,city,"Beijing, China",,66,,2016,pm25,PM25,City,µg/m3
+19278,10745,city,Beijing,China,CHN,city,"Beijing, China",,55.6,,2017,pm25,PM25,City,µg/m3
+19279,10745,city,Beijing,China,CHN,city,"Beijing, China",,57.7,,2018,pm25,PM25,City,µg/m3
+19280,10745,city,Beijing,China,CHN,city,"Beijing, China",,55,,2019,pm25,PM25,City,µg/m3
+93841,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,21.9,,2000,pm25,PM25,City,µg/m3
+93842,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,20.1,,2001,pm25,PM25,City,µg/m3
+93843,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,18,,2002,pm25,PM25,City,µg/m3
+93844,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,18.9,,2003,pm25,PM25,City,µg/m3
+93845,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,16.6,,2004,pm25,PM25,City,µg/m3
+93846,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,18.6,,2005,pm25,PM25,City,µg/m3
+93847,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,18.8,,2006,pm25,PM25,City,µg/m3
+93848,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,17.9,,2007,pm25,PM25,City,µg/m3
+93849,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,18.3,,2008,pm25,PM25,City,µg/m3
+93850,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,17,,2009,pm25,PM25,City,µg/m3
+93851,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,17.4,,2010,pm25,PM25,City,µg/m3
+93852,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,15.8,,2011,pm25,PM25,City,µg/m3
+93853,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,15.8,,2012,pm25,PM25,City,µg/m3
+93854,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,16.1,,2013,pm25,PM25,City,µg/m3
+93855,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,15.5,,2014,pm25,PM25,City,µg/m3
+93856,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,15.9,,2015,pm25,PM25,City,µg/m3
+93857,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,14.3,,2016,pm25,PM25,City,µg/m3
+93858,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,15.7,,2017,pm25,PM25,City,µg/m3
+93859,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,15.9,,2018,pm25,PM25,City,µg/m3
+93860,13017,city,Tokyo,Japan,JPN,city,"Tokyo, Japan",,14.3,,2019,pm25,PM25,City,µg/m3
+124461,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,21.8,,2000,pm25,PM25,City,µg/m3
+124462,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,20.1,,2001,pm25,PM25,City,µg/m3
+124463,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,19,,2002,pm25,PM25,City,µg/m3
+124464,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,20.5,,2003,pm25,PM25,City,µg/m3
+124465,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,16.4,,2004,pm25,PM25,City,µg/m3
+124466,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,16.1,,2005,pm25,PM25,City,µg/m3
+124467,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,18.9,,2006,pm25,PM25,City,µg/m3
+124468,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,15.1,,2007,pm25,PM25,City,µg/m3
+124469,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,18.3,,2008,pm25,PM25,City,µg/m3
+124470,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,20.9,,2009,pm25,PM25,City,µg/m3
+124471,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,16.9,,2010,pm25,PM25,City,µg/m3
+124472,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,18.5,,2011,pm25,PM25,City,µg/m3
+124473,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,18,,2012,pm25,PM25,City,µg/m3
+124474,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,19.1,,2013,pm25,PM25,City,µg/m3
+124475,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,15.1,,2014,pm25,PM25,City,µg/m3
+124476,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,17.7,,2015,pm25,PM25,City,µg/m3
+124477,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,17.4,,2016,pm25,PM25,City,µg/m3
+124478,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,13,,2017,pm25,PM25,City,µg/m3
+124479,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,14.6,,2018,pm25,PM25,City,µg/m3
+124480,2473,city,Zurich,Switzerland,CHE,city,"Zurich, Switzerland",,14.1,,2019,pm25,PM25,City,µg/m3
+66721,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,99.2,,2000,pm25,PM25,City,µg/m3
+66722,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,100.3,,2001,pm25,PM25,City,µg/m3
+66723,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,113.7,,2002,pm25,PM25,City,µg/m3
+66724,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,112.5,,2003,pm25,PM25,City,µg/m3
+66725,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,115.4,,2004,pm25,PM25,City,µg/m3
+66726,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,97.6,,2005,pm25,PM25,City,µg/m3
+66727,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,93.4,,2006,pm25,PM25,City,µg/m3
+66728,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,102.8,,2007,pm25,PM25,City,µg/m3
+66729,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,113.9,,2008,pm25,PM25,City,µg/m3
+66730,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,113.3,,2009,pm25,PM25,City,µg/m3
+66731,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,114.9,,2010,pm25,PM25,City,µg/m3
+66732,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,137.7,,2011,pm25,PM25,City,µg/m3
+66733,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,142.9,,2012,pm25,PM25,City,µg/m3
+66734,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,131.9,,2013,pm25,PM25,City,µg/m3
+66735,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,126.4,,2014,pm25,PM25,City,µg/m3
+66736,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,123.8,,2015,pm25,PM25,City,µg/m3
+66737,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,141.4,,2016,pm25,PM25,City,µg/m3
+66738,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,129,,2017,pm25,PM25,City,µg/m3
+66739,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,146.8,,2018,pm25,PM25,City,µg/m3
+66740,6998,city,Delhi [New Delhi],India,IND,city,"Delhi [New Delhi], India",,110.4,,2019,pm25,PM25,City,µg/m3
+138141,950,city,New York,United States,USA,city,"New York, United States",,13.4,,2000,pm25,PM25,City,µg/m3
+138142,950,city,New York,United States,USA,city,"New York, United States",,12.3,,2001,pm25,PM25,City,µg/m3
+138143,950,city,New York,United States,USA,city,"New York, United States",,12.3,,2002,pm25,PM25,City,µg/m3
+138144,950,city,New York,United States,USA,city,"New York, United States",,11.9,,2003,pm25,PM25,City,µg/m3
+138145,950,city,New York,United States,USA,city,"New York, United States",,10.5,,2004,pm25,PM25,City,µg/m3
+138146,950,city,New York,United States,USA,city,"New York, United States",,11.4,,2005,pm25,PM25,City,µg/m3
+138147,950,city,New York,United States,USA,city,"New York, United States",,10.3,,2006,pm25,PM25,City,µg/m3
+138148,950,city,New York,United States,USA,city,"New York, United States",,11.3,,2007,pm25,PM25,City,µg/m3
+138149,950,city,New York,United States,USA,city,"New York, United States",,9.6,,2008,pm25,PM25,City,µg/m3
+138150,950,city,New York,United States,USA,city,"New York, United States",,9.6,,2009,pm25,PM25,City,µg/m3
+138151,950,city,New York,United States,USA,city,"New York, United States",,8.1,,2010,pm25,PM25,City,µg/m3
+138152,950,city,New York,United States,USA,city,"New York, United States",,11.2,,2011,pm25,PM25,City,µg/m3
+138153,950,city,New York,United States,USA,city,"New York, United States",,8.7,,2012,pm25,PM25,City,µg/m3
+138154,950,city,New York,United States,USA,city,"New York, United States",,9.5,,2013,pm25,PM25,City,µg/m3
+138155,950,city,New York,United States,USA,city,"New York, United States",,8.6,,2014,pm25,PM25,City,µg/m3
+138156,950,city,New York,United States,USA,city,"New York, United States",,8,,2015,pm25,PM25,City,µg/m3
+138157,950,city,New York,United States,USA,city,"New York, United States",,7.5,,2016,pm25,PM25,City,µg/m3
+138158,950,city,New York,United States,USA,city,"New York, United States",,7,,2017,pm25,PM25,City,µg/m3
+138159,950,city,New York,United States,USA,city,"New York, United States",,7.3,,2018,pm25,PM25,City,µg/m3
+138160,950,city,New York,United States,USA,city,"New York, United States",,8,,2019,pm25,PM25,City,µg/m3

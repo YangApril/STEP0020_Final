@@ -1,0 +1,15 @@
+ParentLocationCode,iso3,Location,Period,FactValueNumeric,Population_density
+Asia,CHN,Beijing,2019,37.04,"1,300"
+Europe,GBR,London,2019,11.206,"5,666"
+Asia,JPN,Tokyo,2019,10.828,"6,349"
+Asia,IND,Mumbai,2019,43.439,"26,000"
+North America,USA,New York City,2019,7.244,"10,194"
+Europe,FRA,Paris,2019,12.733,"20,700"
+Australia,AUS,Sydney,2019,11.273,400
+Africa,ZAF,Cape Town,2019,8.067,"1,530"
+North America,CAN,Edmonton,2019,8.2,123
+Asia,BGD,Dhaka,2019,86.481,"47,400"
+North America,USA,Charlotte,2019,8.5,"1,064"
+North America,CAN,Vancouver,2019,5.5,"5,493"
+Europe,FRA,Strasbourg,2019,74,"3,500"
+Australia,AUS,Canberra,2019,13.9,492
